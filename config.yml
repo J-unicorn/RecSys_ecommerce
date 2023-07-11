@@ -1,0 +1,17 @@
+connect_info:
+  database: postgres
+  host: 127.0.0.1
+  password: agens
+  port: '5432'
+  user: agens
+fastapi_info:
+  host: 112.221.131.146
+  port: 1655
+model_weights:
+  it2v: 1
+  lgcn: 1
+  topn: 1
+path_info:
+  base_path: 
+  model_path: data/
+  page_path: pages/
