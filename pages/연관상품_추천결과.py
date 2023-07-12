@@ -18,7 +18,7 @@ class SessionState:
 
 class StreamlitItemRecApp:
     def __init__(self,host,port,model_path):
-        self.session_state = SessionState(item_id=176919591,model=None,topk=None,sizeFilter=False) 
+        self.session_state = SessionState(item_id=176919591,model=None,topk=50,sizeFilter=False) 
         self.display_Recsys = RecDisplay(host,port)
         self.model_path = model_path
         with open(self.model_path + "/item_list.pkl", "rb") as f:
@@ -64,7 +64,7 @@ class StreamlitItemRecApp:
 
         with col3:
             self.session_state.topk = st.number_input(
-                "추천받을 아이템 수를 입력하세요:", format="%g", step=1, min_value=1, max_value=100, value=100
+                "추천받을 아이템 수를 입력하세요:", format="%g", step=1, min_value=1, max_value=100, value=50
             )
 
             if self.session_state.item_id and self.session_state.model and self.session_state.topk:
