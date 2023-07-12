@@ -23,13 +23,13 @@ class StreamlitUserRecApp:
 
     def run(self):
         st.set_page_config(
-            page_title="SecondWear 홈피드추천 테스트", layout="wide", initial_sidebar_state="expanded"
+            page_title="개인화 추천 테스트 페이지", layout="wide", initial_sidebar_state="expanded"
         )
 
 
         col1, col2, col3 = st.columns([0.5, 0.25, 0.25])
         with col1:
-            st.subheader("""홈피드 추천 결과 조회하기""")
+            st.subheader("""개인화 추천 결과 조회하기""")
             st.write("회원 ID와 추천 모델, 추천 아이템 수를 입력하세요.")
 
             random_button = st.button(label="### Random 회원 ID 선택")

@@ -28,10 +28,11 @@ class StreamlitItemRecApp:
 
         # 하기 내용은 표시 텍스트
         st.set_page_config(
-            page_title="SecondWear 상품상세추천 테스트", layout="wide", initial_sidebar_state="expanded"
+            page_title="연관 상품 추천 테스트 페이지", layout="wide", initial_sidebar_state="expanded"
         )
 
-        st.subheader("""상품상세 추천 결과입니다 \n 아이템을 조회하여 주시고 추천모델을 선택해주세요""")
+        st.subheader("""연관 아이템 추천 결과입니다""")
+        st.write("아이템 ID와 추천 모델, 추천 아이템 수를 입력하세요.")
 
 
 
@@ -94,12 +95,12 @@ class StreamlitItemRecApp:
 
         col1, col2 = st.columns(2)
         with col1:
-            with st.expander("#### 유사 상품 추천 이미지", expanded=True):
+            with st.expander("#### 유사 상품 추천 이미지 (Item2vec)", expanded=True):
                 if self.session_state.item_id:
                     self.display_Recsys.display_image(**itemknn_param, col_num=5)
 
         with col2:
-            with st.expander("#### 함께본 상품 추천 이미지", expanded=True):
+            with st.expander("#### 함께본 상품 추천 이미지 (session_graph)", expanded=True):
                 if self.session_state.item_id:
                     if len(graph_param["image_url_list"]) == 0:
                         st.write("함께본 조회가 존재하지않습니다")

@@ -332,7 +332,7 @@ class RecFastapi(metaclass=SingletonMeta):
 
 if __name__ == "__main__":
     # YAML 파일 로드
-    with open("/home/agens/conda_user/hello/config.yml", "r") as file:
+    with open("config.yml", "r") as file:
         config = yaml.safe_load(file)
 
     # 설정 가져오기

@@ -39,7 +39,7 @@ class RecDisplay(metaclass=SingletonMeta):
 
             df = df.drop_duplicates(["상품명"], keep="first", ignore_index=True)
             df["item_img_path"] = df["item_img_path"].apply(
-                lambda x: "http://ccimg.hellomarket.com" + str(x) + "?size=s2"
+                lambda x: "http://ccimg.hellomarket.com" + str(x) + "?size=s3"
             )
             param["image_url_list"] = list(df.item_img_path.values)
             param["price_list"] = list(df["가격"].values)
