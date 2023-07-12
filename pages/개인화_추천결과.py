@@ -15,7 +15,7 @@ class SessionState:
 
 class StreamlitUserRecApp:
     def __init__(self,host,port,model_path):
-        self.session_state = SessionState(user_id=5017208, model="Ensemble", topk=100)
+        self.session_state = SessionState(user_id=5017208, model="Ensemble", topk=50)
         self.display_Recsys = RecDisplay(host,port)
         self.model_path = model_path
         with open(self.model_path + "/tot_user_dict.pkl", "rb") as f:
@@ -48,7 +48,7 @@ class StreamlitUserRecApp:
         
         with col3:
             self.session_state.topk = st.number_input(
-                "추천 아이템 수:", format="%g", step=1, min_value=1, value=100
+                "추천 아이템 수:", format="%g", step=1, min_value=1, value=50
             )
             if self.session_state.user_id and self.session_state.model and self.session_state.topk:
                 rec_param, view_param, rec_view, user_view = self.display_Recsys.user_rec_view(
@@ -84,7 +84,7 @@ class StreamlitUserRecApp:
                         self.display_Recsys.display_image(**rec_param, col_num=5)
 
 
-        with st.expander(f"**추천 결과**", expanded=True):
+        with st.expander(f"**추천 결과**"):
             if self.session_state.user_id:
                 st.dataframe(rec_view, height=200, use_container_width=True)
 
