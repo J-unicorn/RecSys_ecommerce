@@ -13,7 +13,7 @@ model_image = Image.open('data/rec_list.png')
 
 # 하기 내용은 표시 텍스트
 st.set_page_config(
-    page_title="SecondWear 추천테스트", layout="wide", initial_sidebar_state="expanded"
+    page_title="추천테스트페이지", layout="wide", initial_sidebar_state="expanded"
 )
 
 st.title("추천 결과 테스트 페이지")
