@@ -25,11 +25,11 @@ st.text("")
 st.text("")
 
 
-with st.expander("#### 추천 시스템 아키텍처 확인하기"):
+with st.expander("#### 추천 시스템 아키텍처 확인하기",expand=True):
     # 이미지 출력
     st.image(arc_image, caption='추천 시스템 아키텍쳐')
     
-with st.expander("#### 추천 모델 비교하기 "):
+with st.expander("#### 추천 모델 비교하기 ",expand=True):
     # 이미지 출력
     st.image(model_image, caption='추천 모델 비교')
 
