@@ -120,7 +120,12 @@ if __name__ == "__main__":
     # YAML 파일 로드
     with open("config.yml", "r") as file:
         config = yaml.safe_load(file)
-    
+
+    # Secret 파일 로드
+    config["fastapi_info"] = {
+        'host' : os.environ.get('API_HOST'),
+        'port' : os.environ.get('API_PORT')
+    }
     # 설정 가져오기
     model_weights = config["model_weights"]
     fastapi_info = config["fastapi_info"]
