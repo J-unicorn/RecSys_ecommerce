@@ -2,4 +2,3 @@ streamlit
 pyyaml
 pandas
 streamlit-toggle-switch
-openai
